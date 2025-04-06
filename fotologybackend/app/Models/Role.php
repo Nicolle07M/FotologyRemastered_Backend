@@ -14,4 +14,9 @@ class Role extends Model
     protected $fillable = ['name', 'description'];
 
     public $timestamps = true;
+
+    public function users()
+    {
+        return $this->hasMany(UsersRole::class, 'role_id');
+    }
 }
