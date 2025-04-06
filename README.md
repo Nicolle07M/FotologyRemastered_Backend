@@ -8,6 +8,9 @@ Involucrados inicialmente:
 - Creadora principal de la idea y parte del proyecto: NATALY SANCHEZ
 - Desarrolladores: Mario Prada, Erik Chavez, Camilo Rodriguez y Nicolle Marquez.
 
+Persona que le da continuidad al proyecto desde cero:
+- Nicolle Marquez
+
 Tecnologias a usar:
 - BACKEND CON PHP LARAVEL
 - FRONTEND CON REACT NEXT.JS
