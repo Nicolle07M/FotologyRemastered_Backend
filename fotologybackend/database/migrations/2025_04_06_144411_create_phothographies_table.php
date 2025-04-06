@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePhotographersTable extends Migration
+class CreatePhotographiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreatePhotographersTable extends Migration
      */
     public function up()
     {
-        Schema::create('photographers', function (Blueprint $table) {
+        Schema::create('photographies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Relación con la tabla de usuarios
-            $table->string('email')->unique();
-            $table->text('bio')->nullable();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->string('image_path');
+            $table->foreignId('photographer_id')->constrained('photographers')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreatePhotographersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('photographers');
+        Schema::dropIfExists('photographies');
     }
 }
