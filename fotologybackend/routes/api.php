@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
-
+use App\Http\Controllers\DocumentTypeController;
+use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // RUTAS DE PEOPLE // CRUD
 Route::apiResource('people', PeopleController::class);
+
+// RUTAS DE DOCUMENT TYPES // CRUD
+Route::apiResource('document_types', DocumentTypeController::class);
+
+// RUTAS DE ROLES // CRUD  
+Route::apiResource('roles', RoleController::class);

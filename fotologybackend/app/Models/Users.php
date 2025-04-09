@@ -9,6 +9,11 @@ class Users extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'people_id',
+        'password',
+    ];
+
     public function roles()
     {
         return $this->hasMany(UsersRole::class, 'user_id');

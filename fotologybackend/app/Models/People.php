@@ -16,6 +16,7 @@ class People extends Model
         'last_name',        // Apellido
         'phone',            // Teléfono
         'birth_date',       // Fecha de nacimiento
+        'email',            // Correo electrónico
         'document_type_id', // Relación con document_types
         'document_number',  // Número de documento
         'photo',            // Foto (opcional)
