@@ -13,4 +13,14 @@ class Users extends Model
     {
         return $this->hasMany(UsersRole::class, 'user_id');
     }
+    
+        public function people()
+    {
+        return $this->belongsTo(People::class, 'people_id');
+    }
+
+    public function client()
+    {
+        return $this->hasOne(Client::class, 'user_id');
+    }
 }
