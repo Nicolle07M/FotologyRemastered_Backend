@@ -24,8 +24,6 @@ class DocumentTypeSeeder extends Seeder
             DocumentType::create([
                 'name' => $type['name'],
                 'abbreviation' => $type['abbreviation'],
-                'creation_date' => $now,
-                'update_creation' => $now,
             ]);
         }
     }

@@ -11,7 +11,7 @@ class DocumentType extends Model
 
     protected $table = 'document_types';
 
-    protected $fillable = ['name', 'abbreviation', 'creation_date', 'update_creation'];
+    protected $fillable = ['name', 'abbreviation'];
 
     public $timestamps = true; 
 }

@@ -12,8 +12,7 @@ class CreateDocumentTypesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('abbreviation')->nullable();
-            $table->timestamp('creation_date')->useCurrent(); // Se asigna al crear
-            $table->timestamp('update_creation')->nullable()->useCurrentOnUpdate(); // Se actualiza al modificar
+            $table->timestamps(); // Agrega created_at y updated_at automáticamente
         });
     }
 
