@@ -19,6 +19,7 @@ class CreatePhotographyTable extends Migration
             $table->text('description')->nullable();
             $table->string('image_path');
             $table->foreignId('photographer_id')->constrained('photographers')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade'); // Relación con categories
             $table->timestamps();
         });
     }

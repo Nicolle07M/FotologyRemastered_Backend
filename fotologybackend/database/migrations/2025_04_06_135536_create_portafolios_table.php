@@ -24,6 +24,12 @@ class CreatePortafoliosTable extends Migration
             // Relación con photographers
             $table->foreign('photographer_id')->references('id')->on('photographers')->onDelete('cascade');
         });
+
+        // Relación entre portafolios y photographies
+        Schema::table('photographies', function (Blueprint $table) {
+            $table->unsignedBigInteger('portafolio_id')->nullable(); // Relación con portafolios
+            $table->foreign('portafolio_id')->references('id')->on('portafolios')->onDelete('cascade');
+        });
     }
 
     /**
@@ -33,6 +39,12 @@ class CreatePortafoliosTable extends Migration
      */
     public function down()
     {
+        // Eliminar la relación entre photographies y portafolios
+        Schema::table('photographies', function (Blueprint $table) {
+            $table->dropForeign(['portafolio_id']);
+            $table->dropColumn('portafolio_id');
+        });
+
         Schema::dropIfExists('portafolios');
     }
 }
