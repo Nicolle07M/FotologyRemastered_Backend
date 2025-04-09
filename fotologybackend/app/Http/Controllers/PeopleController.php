@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class PeopleController extends Controller
 {
-    // Mostrar una lista de personas
+    // Mostrar una lista de todas las personas
     public function index()
     {
-        $people = People::with('documentType')->get(); // Incluye la relación con documentType
+        $people = People::with('documentType')->get(); // Incluye la relación con document_types
         return response()->json($people);
     }
 
